@@ -1,0 +1,24 @@
+@import "bulma/css/bulma.min.css";
+
+.header {
+    /* background-image: url("https://removal.ai/wp-content/uploads/2021/05/image1.png"); */
+    background-color: rgb(75, 75, 75);
+    background-repeat: no-repeat;
+    color: white;
+    font-weight: bold;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 5rem 5rem;
+}
+
+footer {
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
