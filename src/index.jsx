@@ -11,7 +11,15 @@ const App = () => {
             </p>
         </div>
         <div className="content">
-            
+            <p className="is-size-3"><b>INTRODUCTION</b></p>
+            <p className="is-size-5">
+                This example shows how to configure react with multiple pages.
+                This approach is mainly for servers that are not node focused or just frontend 
+                like apache.
+            </p>
+            <div className="continue">
+                <a href="/login">Login</a>
+            </div>
         </div>
         <footer>
             <p>
