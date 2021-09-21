@@ -2,8 +2,8 @@ version: "3.7"
 
 services:
   app:
-    image: httpd:2-alpine
-    ports: 
+    image: php:7.2-apache
+    ports:
       - 8000:80
     volumes:
-      - ./dist/:/usr/local/apache2/htdocs/
+      - ./dist/:/var/www/html/

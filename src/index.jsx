@@ -2,6 +2,9 @@ import React from "react"
 import ReactDOM from "react-dom"
 import "./index.css"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+
 const App = () => {
     return <>
         <div className="header">
@@ -17,8 +20,34 @@ const App = () => {
                 This approach is mainly for servers that are not node focused or just frontend 
                 like apache.
             </p>
+            <p className="is-size-4"><b>Backend</b></p>
+            <ul className="is-size-5">
+                <li>
+                    Apache (Server)
+                    <ul><li>php</li></ul>
+                </li>
+            </ul>
+            <p className="is-size-4"><b>Frontend</b></p>
+            <ul className="is-size-5">
+                <li>Html</li>
+                <li>Css</li>
+                <li>
+                    Javascript:
+                    <ul>
+                        <li>Webpack</li>
+                        <li>babel</li>
+                        <li>React</li>
+                        <li>CssLoader</li>
+                        <li>HtmlWebpackLoader</li>
+                    </ul>
+                </li>
+            </ul>
             <div className="continue">
-                <a href="/login">Login</a>
+                <a href="/login">
+                    <b>LOGIN</b>
+                    {'  '}
+                    <FontAwesomeIcon icon={faArrowRight} />
+                </a>
             </div>
         </div>
         <footer>

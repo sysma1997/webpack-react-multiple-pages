@@ -3,11 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     mode: "development", 
+    devtool: "inline-source-map", 
     entry: {
         index: "./src/index.jsx", 
         "./login/index": "./src/login/index.jsx"
     }, 
-    devtool: "inline-source-map", 
     devServer: {
         static: "./dist"
     }, 
@@ -26,11 +26,11 @@ module.exports = {
         })
     ], 
     output: {
-        filename: "[name].[contenthash].js", 
+        filename: "[name].js", 
         path: path.resolve(__dirname, "dist"), 
-        clean: true
+        /* clean: true */
     }, 
-    optimization: {
+    /* optimization: {
         runtimeChunk: "single", 
         splitChunks: {
             cacheGroups: {
@@ -41,7 +41,7 @@ module.exports = {
                 }
             }
         }
-    }, 
+    },  */
     module: {
         rules: [
             {

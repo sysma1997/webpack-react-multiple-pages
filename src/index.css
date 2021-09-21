@@ -23,10 +23,15 @@
     flex-direction: row-reverse;
 }
 .content .continue a {
+    color: gray;
     border: 2px solid gray;
     border-radius: 0.5rem;
     
     padding: 1rem 3rem;
+}
+.content .continue a:hover {
+    color: rgb(9, 128, 184);
+    border-color: rgb(9, 128, 184);
 }
 
 footer {
