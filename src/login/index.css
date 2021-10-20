@@ -1,0 +1,45 @@
+@import "bulma/css/bulma.min.css";
+
+.login {
+    border: 1px solid rgb(75, 75, 75);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+.login label {
+    color: rgb(75, 75, 75);
+    font-size: 1.5rem;
+    text-align: left;
+
+    width: 20rem;
+    margin-bottom: 0.3rem;
+}
+.login input {
+    width: 20rem;
+    margin-bottom: 1rem;
+
+    padding: 0.5rem;
+}
+.login .error {
+    border: 2px solid red;
+    border-radius: 0.1rem;
+}
+
+.login button {
+    background-color: rgb(75, 75, 75);
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+
+    width: 20rem;
+    padding: 0.8rem 0;
+}
+.login button:hover {
+    background-color: rgb(9, 128, 184);
+    cursor: pointer;
+}

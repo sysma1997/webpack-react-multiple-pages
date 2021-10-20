@@ -23,8 +23,8 @@
     flex-direction: row-reverse;
 }
 .content .continue a {
-    color: gray;
-    border: 2px solid gray;
+    color: rgb(75, 75, 75);
+    border: 2px solid rgb(75, 75, 75);
     border-radius: 0.5rem;
     
     padding: 1rem 3rem;

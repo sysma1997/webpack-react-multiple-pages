@@ -1,18 +1,14 @@
 const path = require("path")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyPlugin = require("copy-webpack-plugin")
 
 module.exports = {
-    mode: "development", 
-    devtool: "inline-source-map", 
     entry: {
         index: "./src/index.jsx", 
         "./login/index": "./src/login/index.jsx"
     }, 
-    devServer: {
-        static: "./dist"
-    }, 
     plugins: [
-        new HtmlWebpackPlugin({ 
+        new HtmlWebpackPlugin({
             title: "Home", 
             filename: "index.html", 
             template: "./src/index.html", 
@@ -23,14 +19,20 @@ module.exports = {
             filename: "login/index.html", 
             template: "./src/index.html", 
             chunks: ["./login/index"]
+        }), 
+        new CopyPlugin({
+            patterns: [
+                { from: "backend", to: "backend" }
+            ]
         })
     ], 
     output: {
-        filename: "[name].js", 
+        filename: "[name].[contenthash].js", 
         path: path.resolve(__dirname, "dist"), 
-        /* clean: true */
+        clean: true
     }, 
-    /* optimization: {
+    optimization: {
+        moduleIds: "deterministic", 
         runtimeChunk: "single", 
         splitChunks: {
             cacheGroups: {
@@ -41,7 +43,7 @@ module.exports = {
                 }
             }
         }
-    },  */
+    }, 
     module: {
         rules: [
             {
