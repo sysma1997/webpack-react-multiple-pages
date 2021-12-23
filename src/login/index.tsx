@@ -1,34 +1,37 @@
-import React, { useState } from "react"
-import ReactDOM from "react-dom"
+import * as React from "react"
+import { useState } from "react"
+import * as ReactDOM from "react-dom"
 import "./index.css"
-import sha256 from "crypto-js/sha256"
+import * as sha256 from "crypto-js/sha256"
+
+import { User } from "../core/user/domain/user"
 
 const Login = () => {
-    const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [invalid, setInvalid] = useState({
-        username: false,
-        usernameMessage: null, 
-        password: false, 
+        email: false,
+        emailMessage: null,
+        password: false,
         passwordMessage: null
     })
 
     const clickLogin = () => {
         let inv = { ...invalid }
-        if(username === "" || password === "") {
-            if(username === "") {
-                inv.username = true
-                inv.usernameMessage = "Username is not empty"
+        if (email === "" || password === "") {
+            if (email === "") {
+                inv.email = true
+                inv.emailMessage = "Username is not empty"
             }
-            if(password === "") {
+            if (password === "") {
                 inv.password = true
                 inv.passwordMessage = "Password is not empty"
             }
             setInvalid(inv)
             return
         }
-        inv.username = false
-        inv.usernameMessage = null
+        inv.email = false
+        inv.emailMessage = null
         inv.password = false
         inv.passwordMessage = null
         setInvalid(inv)
@@ -37,11 +40,11 @@ const Login = () => {
     return <>
         <div className="login">
             <label>Username</label>
-            <input type="text" className={(invalid.username) ? "error" : ""} 
-                value={username} onChange={event => setUsername(event.target.value)} />
-            {(invalid.usernameMessage) && <small>{invalid.usernameMessage}</small>}
+            <input type="text" className={(invalid.email) ? "error" : ""}
+                value={email} onChange={event => setEmail(event.target.value)} />
+            {(invalid.emailMessage) && <small>{invalid.emailMessage}</small>}
             <label>Password</label>
-            <input type="password" className={(invalid.password) ? "error" : ""} 
+            <input type="password" className={(invalid.password) ? "error" : ""}
                 value={password} onChange={event => setPassword(event.target.value)} />
             {(invalid.passwordMessage) && <small>{invalid.passwordMessage}</small>}
             <button className="loginButton"

@@ -4,8 +4,8 @@ const CopyPlugin = require("copy-webpack-plugin")
 
 module.exports = {
     entry: {
-        index: "./src/index.jsx", 
-        "./login/index": "./src/login/index.jsx"
+        index: "./src/index.tsx", 
+        "./login/index": "./src/login/index.tsx"
     }, 
     plugins: [
         new HtmlWebpackPlugin({
@@ -63,10 +63,15 @@ module.exports = {
             {
                 test: /\.(png|jpg|jpeg|svg|gif)$/i, 
                 type: "asset/resource"
-            }
+            }, 
+            { 
+                test: /\.tsx?$/, 
+                use: "ts-loader", 
+                exclude: /node_modules/, 
+            }, 
         ]
     },
     resolve: {
-        extensions: ['*', '.js', '.jsx']
+        extensions: ['*', '.ts', '.tsx', '.js', '.jsx']
     }
 }

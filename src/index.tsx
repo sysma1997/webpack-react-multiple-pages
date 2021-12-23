@@ -1,5 +1,5 @@
-import React from "react"
-import ReactDOM from "react-dom"
+import * as React from "react"
+import * as ReactDOM from "react-dom"
 import "./index.css"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -17,7 +17,7 @@ const App = () => {
             <p className="is-size-3"><b>INTRODUCTION</b></p>
             <p className="is-size-5">
                 This example shows how to configure react with multiple pages.
-                This approach is mainly for servers that are not node focused or just frontend 
+                This approach is mainly for servers that are not node focused or just frontend
                 like apache.
             </p>
             <p className="is-size-4"><b>Backend</b></p>
