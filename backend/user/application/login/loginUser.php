@@ -1,19 +1,19 @@
 <?php
 
-require_once "../../domain/user.php";
-require_once "./userLoginRepository.php";
+require_once(realpath(dirname(__FILE__) . "/../../domain/user.php"));
+require_once(realpath(dirname(__FILE__) . "/userLoginRepository.php"));
 
 class LoginUser {
-    private $repository;
+    private UserLoginRepository $repository;
 
-    function __construct($_repository) {
-        $repository = $_repository;
+    function __construct(UserLoginRepository $repository) {
+        $this->repository = $repository;
     }
 
-    public function init($email, $password) {
-        $user = $repository->init($email, $password);
+    public function init(string $email, string $password): ?User {
+        $user = $this->repository->init($email, $password);
 
-        if(!$user) throw new Exception("User not found.");
+        if(!is_null($user)) throw new Exception("User not found.");
 
         return $user;
     }

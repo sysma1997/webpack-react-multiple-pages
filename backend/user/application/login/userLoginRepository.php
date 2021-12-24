@@ -1,7 +1,7 @@
 <?php
 
-require_once "../../domain/user.php";
+require_once(realpath(dirname(__FILE__) . "/../../domain/user.php"));
 
 interface UserLoginRepository {
-    function init($email, $password): User;
+    public function init(string $email, string $password): ?User;
 }
