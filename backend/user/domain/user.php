@@ -8,4 +8,11 @@ class User {
         $this->email = $email;
         $this->password = $password;
     }
+
+    function toString(): string {
+        return json_encode([
+            "email" => $this->email, 
+            "password" => $this->password
+        ]);
+    }
 }

@@ -9,8 +9,6 @@ class UserLoginDatabaseRepository implements UserLoginRepository {
             $password != "462afefdb4c64d4e4cabe9a6f89ad34cace6700e774c6ce47078435c895e03e5") 
             return null;
         
-        $user = new User($email, $password);
-        
-        return $user;
+        return new User($email, $password);
     }
 }

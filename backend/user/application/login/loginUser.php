@@ -13,7 +13,7 @@ class LoginUser {
     public function init(string $email, string $password): ?User {
         $user = $this->repository->init($email, $password);
 
-        if(!is_null($user)) throw new Exception("User not found.");
+        if(is_null($user)) throw new Exception("User not found.");
 
         return $user;
     }
