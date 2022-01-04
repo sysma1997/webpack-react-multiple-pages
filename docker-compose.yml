@@ -12,6 +12,8 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: secret
       MYSQL_DB: todos
+    command: bash -c "curl -sSk https://getcomposer.org/installer | php --
+      --disable-tls && \ mv composer.phar /usr/local/bin/composer"
 
   mysql:
     image: mysql:5.7
