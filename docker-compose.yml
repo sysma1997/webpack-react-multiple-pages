@@ -23,3 +23,6 @@ services:
 
 volumes:
   todo-mysql-data: null
+
+# agregar phpmyadmin
+# https://www.section.io/engineering-education/dockerized-php-apache-and-mysql-container-development-environment/
