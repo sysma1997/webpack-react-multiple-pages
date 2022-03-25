@@ -8,6 +8,5 @@ $mysqlPassword = getenv("MYSQL_PASSWORD");
 try {
     $mdb = new PDO("mysql:host=$mysqlHost;dbname=$mysqlDB", $mysqlUser, $mysqlPassword);
 } catch (PDOException $pdoex) {
-    echo $pdoex->getMessage() . "<br />";
-    die();
+    die($pdoex->getMessage() . "<br />");
 }
