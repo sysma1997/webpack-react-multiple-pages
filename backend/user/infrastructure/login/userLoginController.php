@@ -2,7 +2,7 @@
 
 require_once(realpath(dirname(__FILE__) . "/../../domain/user.php"));
 require_once(realpath(dirname(__FILE__) . "/../../application/login/loginUser.php"));
-require_once(realpath(dirname(__FILE__) . "/./userLoginDatabaseRepository.php"));
+require_once(realpath(dirname(__FILE__) . "/./userLoginMySqlRepository.php"));
 
 require_once(realpath(dirname(__FILE__) . "/../../../shared/infrastructure/controller/headers.php"));
 
@@ -24,7 +24,7 @@ if (!isset($json->email) ||
 $email = $json->email;
 $password = $json->password;
 
-$repository = new UserLoginDatabaseRepository();
+$repository = new UserLoginMySqlRepository();
 $login = new LoginUser($repository);
 
 try {
