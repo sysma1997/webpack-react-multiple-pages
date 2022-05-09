@@ -1,6 +1,6 @@
 import * as React from "react"
 import { useState } from "react"
-import * as ReactDOM from "react-dom"
+import * as ReactDOM from "react-dom/client"
 import "./index.css"
 import * as sha256 from "crypto-js/sha256"
 
@@ -78,5 +78,5 @@ const Login = () => {
     </>
 }
 
-const root = document.getElementById("root")
-ReactDOM.render(<Login />, root)
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(<Login />)

@@ -4,4 +4,8 @@ require_once(realpath(dirname(__FILE__) . "/shared/infrastructure/databases/mysq
 
 $mysql = new MySql();
 
-print_r($mysql->get("SELECT * FROM Users"));
+$result = $mysql->get("SELECT * FROM Users");
+
+foreach($result as $user) {
+    print_r($user);
+}

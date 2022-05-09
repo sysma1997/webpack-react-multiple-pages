@@ -1,5 +1,5 @@
 import * as React from "react"
-import * as ReactDOM from "react-dom"
+import * as ReactDOM from "react-dom/client"
 import "./index.css"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -58,5 +58,5 @@ const App = () => {
     </>
 }
 
-const root = document.getElementById("root")
-ReactDOM.render(<App />, root)
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(<App />)

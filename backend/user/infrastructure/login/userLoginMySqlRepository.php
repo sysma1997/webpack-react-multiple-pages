@@ -21,5 +21,7 @@ class UserLoginMySqlRepository implements UserLoginRepository {
                 "password" => $password->get()
             ]
         );
+
+        
     }
 }
