@@ -18,5 +18,3 @@ else print_r("not found"); */
     http_response_code(400);
     print_r($ex->getMessage());
 } */
-
-OAUTH_SIG_METHOD_RSASHA1("level");
