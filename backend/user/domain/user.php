@@ -9,7 +9,7 @@ class User {
     private string $name;
     private DateTime $birthdate;
     private UserEmail $email;
-    private UserEmail $password;
+    private UserPassword $password;
 
     function __construct(UserId $id, 
         string $name, 

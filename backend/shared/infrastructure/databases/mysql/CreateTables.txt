@@ -7,4 +7,3 @@ CREATE TABLE `Users` (
     
     PRIMARY KEY (id)
 );
-

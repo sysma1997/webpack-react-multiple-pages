@@ -20,7 +20,7 @@ class MySql {
         try {
             $sentence = $this->database->prepare($query);
             foreach ($parameters as $key => $value) {
-                $sentence->bindParam(":$key", $value);
+                $sentence->bindValue($key, $value);
             }
             return $sentence->execute();
         } catch (PDOException $pdoex) {
@@ -33,7 +33,7 @@ class MySql {
 
             $sentence = $this->database->prepare($query);
             foreach ($parameters as $key => $value) {
-                $sentence->bindParam(":$key", $value);
+                $sentence->bindValue($key, $value);
             }
             if($sentence->execute()) {
                 while($row = $sentence->fetch()) {

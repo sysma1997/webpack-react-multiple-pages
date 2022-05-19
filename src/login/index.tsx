@@ -4,7 +4,7 @@ import * as ReactDOM from "react-dom/client"
 import "./index.css"
 import * as sha256 from "crypto-js/sha256"
 
-import { User } from "../core/user/domain/user"
+import { UserEmail } from "../core/user/domain/userEmail"
 
 const Login = () => {
     const [email, setEmail] = useState("")
@@ -16,14 +16,6 @@ const Login = () => {
         passwordMessage: null,
         message: null
     })
-
-    const _validateEmail = (email: string) => {
-        return String(email)
-            .toLowerCase()
-            .match(
-                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-            )
-    }
 
     const clickLogin = () => {
         let inv = { ...invalid }
@@ -39,7 +31,7 @@ const Login = () => {
             setInvalid(inv)
             return
         }
-        if (!_validateEmail(email)) {
+        if (!UserEmail.Validate(email)) {
             inv.email = true
             inv.emailMessage = "Email not is valid"
             setInvalid(inv)
@@ -50,6 +42,8 @@ const Login = () => {
         inv.password = false
         inv.passwordMessage = null
         setInvalid(inv)
+
+        //
     }
 
     return <>

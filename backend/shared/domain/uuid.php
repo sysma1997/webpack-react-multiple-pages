@@ -16,7 +16,7 @@ class Uuid {
 
     public static function Validate(string $value): bool {
         if (!is_string($value) || 
-            (preg_match('/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/', 
+            (preg_match('/^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i', 
             $value) !== 1)) {
             return false;
         }
